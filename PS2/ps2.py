@@ -141,6 +141,8 @@ def plot_mRNA(sol1, sol2):
     plt.plot(t, m2, label="m2")
     plt.plot(t, m3, label="m3")
     plt.plot(t, ind, '--r', label="inducer")
+    plt.xlabel("Time (s)")
+    plt.ylabel("Concentration (uM)")
     plt.legend(loc="best")
     plt.show()
 
@@ -162,6 +164,8 @@ def plot_proteins(sol1, sol2):
     plt.plot(t, p2, label="p2")
     plt.plot(t, p3, label="p3")
     plt.plot(t, ind, 'r--', label="inducer")
+    plt.xlabel("Time (s)")
+    plt.ylabel("Concentration (uM)")
     plt.legend(loc="best")
     plt.show()
 
@@ -271,7 +275,7 @@ def solve_discretized(ind, tau=0.6, broken=False):
 
 
 def main():
-    sol1, sol2 = solve_ode(broken=True)
+    sol1, sol2 = solve_ode(broken=False)
     plot_mRNA(sol1, sol2)
     plot_proteins(sol1, sol2)
 
